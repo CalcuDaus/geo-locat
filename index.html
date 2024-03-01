@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Heloo tai</h1>
-</body>
+    <button class="btn">knl</button>
+    <script>
+      document.querySelector(".btn").addEventListener("click", function () {
+        const successCallback = (position) => console.log(position);
+        const errorCallback = (err) => console.error(err);
+        navigator.geolocation.getCurrentPosition(
+          successCallback,
+          errorCallback
+        );
+      });
+    </script>
+  </body>
 </html>
