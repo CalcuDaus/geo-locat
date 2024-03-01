@@ -8,9 +8,18 @@
   <body>
     <h1>Heloo tai</h1>
     <button class="btn">knl</button>
+    <div class="geo-data">
+
+    </div>
     <script>
       document.querySelector(".btn").addEventListener("click", function () {
-        const successCallback = (position) => console.log(position);
+        const successCallback = (position) => {
+            let lat = position.coords.latitude;
+            let long = position.coords.longitude;
+
+            document.querySelector('.geo-data').innerHTML += lat + ' ' + long
+
+        };
         const errorCallback = (err) => console.error(err);
         navigator.geolocation.getCurrentPosition(
           successCallback,
